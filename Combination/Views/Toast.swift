@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedbackToastModifier: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
     @Binding var isShowing: Bool
     let message: String
     let duration: TimeInterval
@@ -25,7 +26,7 @@ struct FeedbackToastModifier: ViewModifier {
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 5)
-                    .background(.black.opacity(0.4))
+                    .background((colorScheme == .light ? Color.black : Color.white).opacity(0.4))
                     .cornerRadius(12)
                 }
                 .padding(.bottom, 90)
@@ -43,6 +44,7 @@ struct FeedbackToastModifier: ViewModifier {
 }
 
 struct HintToastModifier: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
     @Binding var isShowing: Bool
     let cards: [Card]
     let duration: TimeInterval
@@ -61,7 +63,7 @@ struct HintToastModifier: ViewModifier {
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 5)
-                        .background(.black.opacity(0.4))
+                        .background((colorScheme == .light ? Color.black : Color.white).opacity(0.4))
                         .cornerRadius(12)
                     } else {
                         HStack {
@@ -71,7 +73,7 @@ struct HintToastModifier: ViewModifier {
                         .frame(height: 50)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 5)
-                        .background(.black.opacity(0.4))
+                        .background((colorScheme == .light ? Color.black : Color.white).opacity(0.4))
                         .cornerRadius(12)
                     }
                 }

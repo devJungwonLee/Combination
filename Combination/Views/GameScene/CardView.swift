@@ -60,6 +60,7 @@ struct CardView: View {
                 GeometryReader { geometry in
                     Text("\(card.id + 1)")
                         .font(.notoSans(size: geometry.size.width * 0.4))
+                        .foregroundColor(.black)
                         .position(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY)
                 }
             }

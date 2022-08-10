@@ -67,7 +67,7 @@ struct RecordView: View {
             }
         }
         .padding()
-        .background(.white)
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
         .cornerRadius(10)
     }
 }
